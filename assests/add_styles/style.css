@@ -1,9 +1,9 @@
-.body{
+/*.body{
     margin: 0px;
 
-}
-.backGround{
-    background:url("../img/bh.jpg");
+}*/
+.background{
+    background:url("../img/orbg.jpg");
     width: 100%;
     height: 100vh;
     background-size: cover;
