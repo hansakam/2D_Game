@@ -107,6 +107,12 @@ function keyCheck(event) {
                moveBackGroundAnimationId = setInterval(moveBackGround,100);
 
                  }
+                /*      jumping Dragon      */
+
+           if (boxAnimationId == 0){
+
+              boxAnimationId = setInterval(boxAnimation,100);
+           }
 
         }
                      /*     Jump Animationn Part      */
@@ -120,6 +126,13 @@ function keyCheck(event) {
                 moveBackGroundAnimationId = setInterval(moveBackGround,100);
 
                   }
+
+            /*      jumping Dragon      */
+
+            if (boxAnimationId == 0){
+
+                boxAnimationId = setInterval(boxAnimation,100);
+            }
 
         }
 
@@ -145,7 +158,48 @@ function moveBackGround(){
 
 
 
+                   /*   createBoxes  */
 
+//1040
+boxMarginLeft = 1340;
+
+function createBoxes(){
+
+        for (var i=0 ;i<=10 ;i++){
+
+
+    var box = document.createElement("div");
+    box.className ="box";
+    document.getElementById("background").appendChild(box);
+    box.style.marginLeft = boxMarginLeft + "px";
+
+    box.id = "box" + i;
+
+    /*  badaka athara paratharaya wenas karanne */
+
+    /*boxMarginLeft = boxMarginLeft + 500;*/
+
+    if (i < 5){
+
+        boxMarginLeft = boxMarginLeft + 1400;
+    }
+    if (i >= 5){
+
+        boxMarginLeft = boxMarginLeft + 700;
+    }
+
+        }
+}
+var boxAnimationId = 0;
+
+function boxAnimation(){
+    for (var i=0; i<10 ;i++){
+        var box = document.getElementById("box"+ i);
+        var currentMarginLeft = getComputedStyle(box).marginLeft;
+        var newMarginLeft = parseInt(currentMarginLeft) -25;
+        box.style.marginLeft = newMarginLeft + "px";
+    }
+}
 
 
 
