@@ -250,9 +250,15 @@ function sonicDeadAnimation(){
 
     if(deadImageNumber == 11){
         deadImageNumber =10;
+
+        document.getElementById("end").style.visibility ="visible";
+        document.getElementById("end Score").innerHTML = score;
     }
     boy.src = "assests/img/png/Dead ("+ deadImageNumber +").png"
 
+}
+function reload(){
+    location.reload();
 }
 
 
