@@ -13,15 +13,15 @@
 
 }
 .sonic{
-    height:230px;
-    margin-top: 307px;
+    height:210px;
+    margin-top: 347px;
     position: absolute;
 }
 .box{
-    height: 180px;
-    width: 180px;
+    height: 160px;
+    width: 160px;
    /* background-color: red;*/
-    margin-top: 450px;
+    margin-top: 443px;
     position: absolute;
     background-image: url("../img/ComplexRegalGelding-max-1mb.gif");
     background-size: contain;

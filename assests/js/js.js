@@ -47,17 +47,17 @@ function runAnimationStart(){
 
 jumpImageNumber = 1;
 jumpAnimationNumber = 0;
-sonicMarginTop = 307;
+sonicMarginTop = 347;
 
 function jumpAnimation(){
 
     jumpImageNumber = jumpImageNumber + 1;
     if (jumpImageNumber <= 6){
-        sonicMarginTop = sonicMarginTop - 20;
+        sonicMarginTop = sonicMarginTop - 35;
         sonic.style.marginTop = sonicMarginTop + "px";
     }
     if (jumpImageNumber >= 7){
-        sonicMarginTop = sonicMarginTop + 20;
+        sonicMarginTop = sonicMarginTop + 35;
         sonic.style.marginTop = sonicMarginTop + "px";
     }
 
@@ -161,7 +161,7 @@ function moveBackGround(){
                    /*   createBoxes  */
 
 //1040
-boxMarginLeft = 1340;
+boxMarginLeft = 1540;
 
 function createBoxes(){
 
@@ -181,27 +181,72 @@ function createBoxes(){
 
     if (i < 5){
 
-        boxMarginLeft = boxMarginLeft + 1400;
+        boxMarginLeft = boxMarginLeft + 2000;
     }
     if (i >= 5){
 
-        boxMarginLeft = boxMarginLeft + 700;
-    }
+        boxMarginLeft = boxMarginLeft + 1000;
+
+                 }
 
         }
 }
+
 var boxAnimationId = 0;
 
 function boxAnimation(){
+
     for (var i=0; i<10 ;i++){
         var box = document.getElementById("box"+ i);
+
         var currentMarginLeft = getComputedStyle(box).marginLeft;
-        var newMarginLeft = parseInt(currentMarginLeft) -25;
+
+        var newMarginLeft = parseInt(currentMarginLeft) - 35;
+
         box.style.marginLeft = newMarginLeft + "px";
+
+              /*  Create dead Animation  part */
+
+        if (newMarginLeft>= -110 & newMarginLeft <= 100){
+
+            if (sonicMarginTop > 300 ){
+                clearInterval(boxAnimationId);
+
+                clearInterval(runAnimationNumber);
+
+                runAnimationNumber = -1;
+
+                clearInterval(jumpAnimationNumber);
+                jumpAnimationNumber = -1;
+
+                clearInterval(moveBackGroundAnimationId);
+                moveBackGroundAnimationId = -1;
+
+                deadAnimatinNumber = setInterval(sonicDeadAnimation,100);
+
+
+
+            }
+        }
     }
 }
 
+                /*  Create dead Animation   */
 
+
+
+deadImageNumber = 1;
+boyDeadAnimationNumber = 0;
+function sonicDeadAnimation(){
+
+    deadImageNumber = deadImageNumber+1;
+
+    if(deadImageNumber == 11){
+        deadImageNumber =10;
+    }
+    boy.src = "assests/img/png/Dead ("+ deadImageNumber +").png"
+
+}
 
 
 
