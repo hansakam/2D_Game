@@ -148,11 +148,18 @@ function keyCheck(event) {
 var backgroundImagePositionX =0;
 var moveBackGroundAnimationId =0;
 
+var score = 0;
+
 function moveBackGround(){
 
     backgroundImagePositionX = backgroundImagePositionX - 20;
 
     document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
+
+                                    /*  Add  to Score parts */
+
+    score = score + 1;
+    document.getElementById("score").innerHTML = score;
 }
 
 
